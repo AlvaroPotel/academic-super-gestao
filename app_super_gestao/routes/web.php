@@ -37,3 +37,7 @@ Route::get('/route2', function(){
 })->name('site.route2');
 
 /* Route::redirect('route2', 'route1'); */
+
+Route::fallback(function(){
+    echo 'Page not found. Click <a href="'.route('site.index').'">here</a> to back to the HomePage'; 
+});
