@@ -27,3 +27,13 @@ Route::prefix('/app')->group(function(){
     Route::get('/providers', function(){ return 'Providers'; })->name('app.providers');
     Route::get('/products', function(){ return 'Products'; })->name('app.products');
 });
+
+Route::get('/route1', function(){ 
+    echo 'Route 1'; 
+})->name('site.route1');
+
+Route::get('/route2', function(){ 
+    return redirect()->route('site.route1'); 
+})->name('site.route2');
+
+/* Route::redirect('route2', 'route1'); */
