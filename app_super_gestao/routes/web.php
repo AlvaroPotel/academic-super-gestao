@@ -17,16 +17,13 @@ use Illuminate\Support\Facades\Route;
     return "Hello New APP!";
 }); */
 
-Route::get('/', 'MainController@main');
-
-Route::get('/about-us', "AboutUsController@aboutUs");
-
-Route::get('/contact', "ContactController@contact");
-
-Route::get('/login', function(){ return 'Login'; });
+Route::get('/', 'MainController@main')->name('site.index');
+Route::get('/about-us', "AboutUsController@aboutUs")->name('site.aboutus');
+Route::get('/contact', "ContactController@contact")->name('site.contact');
+Route::get('/login', function(){ return 'Login'; })->name('site.login');
 
 Route::prefix('/app')->group(function(){
-    Route::get('/clients', function(){ return 'Clients'; });
-    Route::get('/providers', function(){ return 'Providers'; });
-    Route::get('/products', function(){ return 'Products'; });
+    Route::get('/clients', function(){ return 'Clients'; })->name('app.clients');
+    Route::get('/providers', function(){ return 'Providers'; })->name('app.providers');
+    Route::get('/products', function(){ return 'Products'; })->name('app.products');
 });
