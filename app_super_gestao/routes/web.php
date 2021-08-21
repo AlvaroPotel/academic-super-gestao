@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@home')->name('site.home');
 Route::get('/about-us', "AboutUsController@aboutUs")->name('site.aboutus');
 Route::get('/contact', "ContactController@contact")->name('site.contact');
+Route::post('/contact', "ContactController@contact")->name('site.contact');
 Route::get('/login', function(){ return 'Login'; })->name('site.login');
 
 Route::prefix('/app')->group(function(){
