@@ -1,20 +1,8 @@
 @extends('site.layouts.basico')
 
+@section("titulo", "About Us")
+
 @section('conteudo')
-    <div class="topo">
-
-        <div class="logo">
-            <img src="{{ asset('img/logo.png')}}">
-        </div>
-
-        <div class="menu">
-            <ul>
-                <li><a href="{{ route('site.home') }}">home</a></li>
-                <li><a href="{{ route('site.aboutus') }}">about us</a></li>
-                <li><a href="{{ route('site.contact') }}">contact</a></li>
-            </ul>
-        </div>
-    </div>
 
     <div class="conteudo-pagina">
         <div class="titulo-pagina">
